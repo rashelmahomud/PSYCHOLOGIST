@@ -17,7 +17,7 @@ export default function App() {
   return (
 
     <>
-      <div className="text-center mt-10">
+      <div className="text-center banner mt-10">
         <h1 className="lg:text-5xl text-3xl">Discounts On Our Exclusives!</h1>
         <h1 className="lg:text-2xl">Various courses on across site wide can be done more cost-effectively throughout the month of July on the occasion of Eid-Al-Adha!</h1>
       </div>
@@ -65,7 +65,7 @@ export default function App() {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        <div className="">
+        <div>
 
           <SwiperSlide>
             <img src="https://i.ibb.co/Qm325MC/30.png" />

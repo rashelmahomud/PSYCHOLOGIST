@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import './PersonDetails.css'
 
 const PersonDetails = () => {
     const { detailsId } = useParams();
@@ -12,7 +13,7 @@ const PersonDetails = () => {
     }, [])
     const newPerson = person.filter(s => s._id == detailsId)
     return (
-        <div>
+        <div className='banner'>
             <div className="card lg:card-side grid lg:p-10 lg:mx-32 place-content-center shadow-xl">
                 <figure><img className='w-96' src={newPerson[0]?.img} alt="Album" /></figure>
                 <div className="card-body">
