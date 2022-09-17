@@ -19,7 +19,6 @@ const Header = ({ handleThemeChange, theme }) => {
 
   </>
 
-
   return (
     <div className='z-40'>
       <div className="navbar bg-base-300 bg-opacity-30 backdrop-filter backdrop-blur-lg">
