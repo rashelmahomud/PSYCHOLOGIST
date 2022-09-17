@@ -1,23 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Header from './Compornents/Shared/Header';
+import Footer from './Compornents/Shared/Footer';
+import Home from './Compornents/Home/Home';
+import { useEffect, useState } from 'react';
+import Person from './Compornents/Service/service1/Person';
+import PersonDetails from './Compornents/Service/service1/PersonDetails';
 
 function App() {
+  const [theme, setTheme] = useState(false);
+
+
+
+  useEffect(() => {
+    setTheme(JSON.parse(window.localStorage.getItem("theme")));
+  }, []);
+
+  const handleThemeChange = () => {
+    setTheme(!theme);
+    window.localStorage.setItem("theme", !theme);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div data-theme={theme && "my_dark"}>
+
+      <Header handleThemeChange={handleThemeChange} theme={theme}></Header>
+      <Routes>
+
+
+
+        <Route path='/' element={<Home></Home>} ></Route>
+        <Route path='/person' element={<Person></Person>} ></Route>
+        <Route path='/personDetails/:detailsId' element={<PersonDetails></PersonDetails>} ></Route>
+
+      </Routes>
+      <Footer></Footer>
+
     </div>
   );
 }
